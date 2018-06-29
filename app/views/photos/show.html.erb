@@ -1,5 +1,5 @@
 <div id="box">
-	<h1>Photo:   <%= @photo.name %></h1>
+	<h1>Photo:   <%= @photo.name %> </h1>
 	<p id="notice"><%= notice %></p>
     <p>
 	  <strong>Description:</strong>
@@ -15,7 +15,7 @@
 	  <%= @photo.user_id %>
 	</p>
     <p>
-	 <%= image_tag @photo.image.url %>
+	 <%= image_tag @photo.image.url, class:"preview" %>
 	</p>
 	
 	<h3><%= link_to 'Edit', edit_photo_path(@photo) %> |

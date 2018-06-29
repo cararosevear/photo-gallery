@@ -19,7 +19,8 @@ end
 
 private
   def image_size_validation
-    errors[:image] << "Image should be less than 2MB" if image.size > 2.megabytes
+    errors[:image] << "Image should be less than 5MB" if image.size > 5.megabytes
   end
-  
 end
+
+ 

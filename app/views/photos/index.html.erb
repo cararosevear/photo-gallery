@@ -12,13 +12,14 @@
 				<%= submit_tag "Search", :name => nil %>
 			  </p>
 			<% end %>	
-        <ul> 
-			<% @photos.each do |photo| %>
-				<li><h3 class="image_title"><%= photo.name %></h3>
-				    <%= link_to   photo do%>
-				    	<%= image_tag photo.image.url :thumb  ,  class: "thumbnail" %></a>	
-					<% end %>	
-				</li>
-            <% end %>	
+        <ul>  
+				<% @photos.each do |photo| %>
+					<li><h3 class="image_title"><%= photo.name %></h3>
+						<%= link_to   photo do%>
+							<%= image_tag photo.image.url :thumb,  class: "thumbnail" %></a>	
+						<% end %>	
+					</li>
+				 <% end %>	
+			 
 		</ul>
 	</div>	

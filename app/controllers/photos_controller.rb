@@ -1,20 +1,20 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-
+  
+  require 'exifr'
+  require 'exifr/tiff'
+  require 'exifr/jpeg'
+  
   # GET /photos
   # GET /photos.json
  def index
-  	  if params[:search]
-	 	@projects = Project.search(params[:search])
-	  else
 		@photos = Photo.all
-    end
-	
   end
 
   # GET /photos/1
   # GET /photos/1.json
   def show
+ 
   end
 
   # GET /photos/new
@@ -76,4 +76,8 @@ class PhotosController < ApplicationController
     def photo_params
       params.require(:photo).permit(:name, :description, :image, :user_id)
     end
+	
+	 # Get the image metadat before posting in show.
+	def get_exifr
+	end
 end

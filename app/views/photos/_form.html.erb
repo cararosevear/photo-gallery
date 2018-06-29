@@ -27,7 +27,7 @@
 		<span class="fileinput-button "> <%=  f.file_field :image %> </span>
 	 
 	  <% if f.object.image? %>
-		  <%= f.label :remove_image %>  <%= f.check_box :remove_image %> 
+		  <%= f.label :remove_image %>
 		  <%= link_to 'Destroy', photo, method: :delete, class:"btn", data: { confirm: 'Are you sure?' } %>
 		<% end %>
 	  </div>

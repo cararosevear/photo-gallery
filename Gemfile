@@ -60,8 +60,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # AWS  Ruby SDK V3.  Documentation here: https://aws.amazon.com/sdk-for-ruby/
 gem 'aws-sdk', '~> 3'
 
+# CarrierWave  used for image uploads
 gem 'carrierwave', '~> 1.0'
 
+# MiniMagick used to create tumnails of images during upload
 gem 'mini_magick', '~> 4.3'
- 
- 
+
+# EXIF Reader used to read image metadata  Documentation here: http://github.com/remvee/exifr/
+gem 'exifr', '~> 1.3', '>= 1.3.4'
