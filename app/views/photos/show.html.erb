@@ -1,0 +1,23 @@
+<div id="box">
+	<h1>Photo:   <%= @photo.name %></h1>
+	<p id="notice"><%= notice %></p>
+    <p>
+	  <strong>Description:</strong>
+	  <%= @photo.description %>
+	</p>
+	
+	<p>
+	  <strong>Location:</strong>
+	  <%= @photo.image.url %>
+	</p>
+	<p>
+	  <strong>Created by:</strong>
+	  <%= @photo.user_id %>
+	</p>
+    <p>
+	 <%= image_tag @photo.image.url %>
+	</p>
+	
+	<h3><%= link_to 'Edit', edit_photo_path(@photo) %> |
+	<%= link_to 'Back', photos_path %></h3>
+ </div>

@@ -1,0 +1,44 @@
+    <div id="box">
+  <%= form_for @photo, html: { multipart: true }  do |f| %>
+	  <% if @photo.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+	 
+		  <ul>
+		  <% @photo.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	  <% end %>
+      <div class="field">
+		<p>Title</p>
+		<%= f.text_field :name %>
+	  </div>
+
+	  <div class="field">
+		<p>Description</p>
+		<%= f.text_area :description %>
+	  </div>
+
+	 <div class="field preview">
+		<h2><%= f.label :image %></h2>
+		<%= image_tag(@photo.image_url) if @photo.image? %>
+		<span class="fileinput-button "> <%=  f.file_field :image %> </span>
+	 
+	  <% if f.object.image? %>
+		  <%= f.label :remove_image %>  <%= f.check_box :remove_image %> 
+		  <%= link_to 'Destroy', photo, method: :delete, class:"btn", data: { confirm: 'Are you sure?' } %>
+		<% end %>
+	  </div>
+	 
+	  <div class="field">
+		<%= f.label :user_id %>
+		<%= f.number_field :user_id %>
+	  </div>
+
+	  <div class="actions">
+		<%= f.submit class: 'btn'%>
+	  </div>
+<% end %>
+</div>

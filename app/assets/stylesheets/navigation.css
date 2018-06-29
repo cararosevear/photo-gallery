@@ -1,0 +1,15 @@
+#navigation{
+	text-align: center;
+	color: black;
+	width:100%;
+	min-height:1.5em;
+}
+.menuitem{
+	padding: 10px;
+	cursor: pointer;
+	text-decoration: none;
+}
+.menuitem:hover{
+	background-color: black;
+	color: white !important;
+}

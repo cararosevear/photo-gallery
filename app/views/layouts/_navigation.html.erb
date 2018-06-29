@@ -1,0 +1,14 @@
+<div id="navigation">
+    <ul>       
+	   <li><h3><%= link_to 'Home', photos_path, class:"menuitem" %></h3></li>
+		<li><% form_tag photos_path, :method => 'get' , class:"search" do %>
+				<p>
+				<%= text_field_tag :search, params[:search] %>
+				<%= submit_tag "Search", :name => nil %>
+			  </p>
+			<% end %><%= link_to 'Add New Photo', new_photo_path, class:"btn p-right" %></li>
+        <li> 
+			
+		</li>
+	</ul>	
+</div>

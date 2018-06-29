@@ -1,0 +1,105 @@
+ html,
+body {
+  height: 100%;
+  margin:0 auto;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 4em;
+  /* must be same height as the footer */
+}
+
+#footer {
+	position: relative;
+	/* negative value of footer height */
+	height: 1.5rem;
+	clear: both;
+	background-color: #563d7c;
+	text-align: center;
+	min-height: 1rem;
+	color:#fff;
+	width:100%;
+	padding:1.2em;
+}  
+ 
+ 
+
+header, section {
+    display: block;
+}
+
+header {
+	z-index: 32;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: rgba(255,255,255,0.75);
+    background-color: #24292e;
+}
+
+header .search{
+	color:#fff;
+}
+
+form {
+	display:table;/* shrinks to fit conntent */
+	margin:auto;
+	width:90%;
+}
+
+
+// Minimal reset
+a img {
+	border: none;
+}
+
+// Makes images responsive
+img {
+	max-width: 100%;
+	
+}
+
+pre {
+	color: #DFDFDF;
+	display: none;
+	font-size: 2em;
+	margin: 2em 0;
+	padding: 0;
+	text-align: center;
+	text-shadow: 0 1px 2px #333;
+}
+
+h1,h2,h3,h4,h5,h6, p{
+   color: #563d7c;		
+}
+ 
+
+
+
+ 
+.container {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.nav {
+	margin:1em;
+}
+	  
+a.btn{
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+.p-right{ float:right; clear:fix; }
+
+.page { }

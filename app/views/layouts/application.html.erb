@@ -4,22 +4,26 @@
     <title>Photo Gallery</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+	 <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
 
   <body>
-  
-	<div class="container">
-		<%= yield %>
- 	</div>
+    <header><%= render "layouts/navigation" %></header>
 	
-	<footer>
-	  <div class="container">
-	   Cara Rosevear
-	  </div>
-	</footer>
+	<div id="wrap">
+		<div id="main"><%= yield %></div>
+	</div>
+
+     <footer id="footer">
+		Cara Rosevear
+	 </footer>
+ 
  
 </body>
 </html>

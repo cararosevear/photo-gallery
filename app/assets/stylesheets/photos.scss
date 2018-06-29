@@ -1,0 +1,138 @@
+// Place all the styles related to the Photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+
+.preview img {
+	max-width:500px; 
+	height:auto; 
+	}
+
+#desktop {
+	display: block;
+}
+
+// The containing element the grid will fill
+#box {
+	background: #fff;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 1em;
+	margin: 0 auto;
+	width: 90%;
+ 
+}
+
+// The mixin calculations
+@mixin grid($items) {
+	list-style: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	li {
+		float: left;
+		
+		// Sets margin and width when your grid only contains 1 image
+		&:nth-child(1n) {
+			margin: 5% 0 0 0;
+		}
+		
+		// If you include more than one image in a grid, calculate dimensions and add margin
+		@if $items > 1 {
+		
+			// Selecting all children so a media query adjustment resets all breaking photos
+			&:nth-child(1n) {
+				margin: (5% / ($items - 1)) (5% / ($items - 1)) 0 0;
+			}
+			
+			width: (95% / $items);
+			// Ugh, we know. The IE hack is nasty, but it was the easiest fix to implement for users and maintain simplicity. IE7 is bad (imagine that) about calculating percentages so we knocked it down a full percent to keep photos from wrapping. When IE7 falls off the face of the earth consider line 66 to follow suit.
+			*width: (94% / $items);
+		}
+		
+		// Removes margin from the last image in a row
+		&:nth-child(#{$items}n) {
+			margin-right: 0;
+		}
+		
+		// Removes margin from first row of images
+		&:nth-child(-n+#{$items}) {
+			margin-top: 0;
+		}
+		img, a {
+			float: left;
+		}
+		
+		// Used if your photos have titles or captions
+		a {
+			text-align: center;
+			width: 100%;
+		}
+	}
+}
+
+// Include 5 images per row
+ul {
+	@include grid(5);
+}
+
+// Break to 3 image per row when on mobile
+@media (max-width: 480px) {
+	ul {
+		@include grid(3);
+	}
+	#desktop {
+		display: none;
+	}
+	#mobile {
+		display: block;
+		font-size: 1.5em;
+	}
+}
+
+ .image_title { text-align: center;}
+ 
+ form {width:100%; max-width:400px;}
+ .fileinput-button, .btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    color: #fff;
+    background-color: #7952B3;
+    border-color: #7952B3;
+    border-radius: 0px;
+  }
+ 
+input , textarea,  checkbox {
+    display: block;
+ 
+    padding: .3rem .75rem;
+    font-size: 1rem;
+    line-height: 1;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+ textarea {
+    width: 100%;    
+}
+  
