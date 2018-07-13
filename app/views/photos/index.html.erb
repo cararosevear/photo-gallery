@@ -1,25 +1,21 @@
-
+<div class="container-fluid m-5">
 
 	<p id="notice"><%= notice %></p>
 
-	<h1>Photo Gallery </h1>
+	<h1 class="mt-5 pt-4 ">Photo Gallery </h1>
 	      
 	
-    <div id="box">
-	         <% form_tag photos_path, :method => 'get' do %>
-				<p>
-				<%= text_field_tag :search, params[:search] %>
-				<%= submit_tag "Search", :name => nil %>
-			  </p>
+    <div id="container-fluid">
+		<div class="row">
+			<% @photos.each do |photo| %>
+				<div class="col-xs-12 col-md-2 m-2">
+					<h5 class="image_title"><%= photo.name %></h3>
+					<%= link_to   photo do%>
+						<%= image_tag photo.image.url :thumb,  class: "thumbnail image-responsive m-5" %></a>	
+					<% end %>	
+				</div>
 			<% end %>	
-        <ul>  
-				<% @photos.each do |photo| %>
-					<li><h3 class="image_title"><%= photo.name %></h3>
-						<%= link_to   photo do%>
-							<%= image_tag photo.image.url :thumb,  class: "thumbnail" %></a>	
-						<% end %>	
-					</li>
-				 <% end %>	
-			 
-		</ul>
+		</div>	 	 
 	</div>	
+</div>
+	 

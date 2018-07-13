@@ -14,20 +14,6 @@ body {
   /* must be same height as the footer */
 }
 
-#footer {
-	position: relative;
-	/* negative value of footer height */
-	height: 1.5rem;
-	clear: both;
-	background-color: #563d7c;
-	text-align: center;
-	min-height: 1rem;
-	color:#fff;
-	width:100%;
-	padding:1.2em;
-}  
- 
- 
 
 header, section {
     display: block;
@@ -44,13 +30,12 @@ header {
 header .search{
 	color:#fff;
 }
+ 
 
-form {
-	display:table;/* shrinks to fit conntent */
-	margin:auto;
-	width:90%;
+ h1, h2, h3, h4, h5, h6 {
+  color:@indigo;
 }
-
+ 
 
 // Minimal reset
 a img {
@@ -73,14 +58,7 @@ pre {
 	text-shadow: 0 1px 2px #333;
 }
 
-h1,h2,h3,h4,h5,h6, p{
-   color: #563d7c;		
-}
- 
 
-
-
- 
 .container {
     width: 90%;
     padding-right: 15px;
@@ -102,4 +80,9 @@ a.btn{
 
 .p-right{ float:right; clear:fix; }
 
-.page { }
+.footer {
+   background-color: #563d7c; 
+	min-height: 1rem;
+	color:#fff;
+	padding:2 em;
+} 
