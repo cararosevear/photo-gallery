@@ -15,15 +15,8 @@ ________________________________________________________________________________
  DATABASE
   name: main (default)
   
-  Table Schema for photos
-    create_table "photos", force: :cascade do |t|
-      t.string "name"
-      t.text "description"
-      t.string "image"
-      t.integer "user_id"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-    end
+  Tables
+      - photos
    
 ______________________________________________________________________________________________________________________
 
