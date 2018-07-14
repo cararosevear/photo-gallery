@@ -2,13 +2,17 @@
 
  Photo gallery using Ruby for Rails.  Functionality includes: Create, List, Edit, Delete and Search.  The front end is styled using Bootstrap 4 and FontAwesome.
  
- Windows 10 Environment:
+ ______________________________________________________________________________________________________________________
+ 
+ WINDOWS 10 DEVELOPMENT:
  * ruby v 2.3.3p222 -> https://rubyinstaller.org/downloads/
  * railsinstaller-3.3.0 -> http://railsinstaller.org
     - Rails v 5.2.0
     - sqlite v 33.8.7.2
 
- Database 
+______________________________________________________________________________________________________________________
+
+ DATABASE
   name: main (default)
   
   Table Schema for photos
@@ -21,8 +25,10 @@
       t.datetime "updated_at", null: false
     end
    
+______________________________________________________________________________________________________________________
 
-* Gemfile Additions/Removal
+  GEMFILE Additions/Removal
+  
       # AWS  Ruby SDK V3.  Documentation here: https://aws.amazon.com/sdk-for-ruby/
       gem 'aws-sdk', '~> 3'
 
