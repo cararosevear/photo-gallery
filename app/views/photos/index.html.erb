@@ -1,21 +1,25 @@
 <div class="container-fluid m-5">
 
 	<p id="notice"><%= notice %></p>
-
+   
 	<h1 class="mt-5 pt-4 ">Photo Gallery </h1>
-	      
-	
-    <div id="container-fluid">
-		<div class="row">
-			<% @photos.each do |photo| %>
-				<div class="col-xs-12 col-md-2 m-2">
-					<h5 class="image_title"><%= photo.name %></h3>
-					<%= link_to   photo do%>
-						<%= image_tag photo.image.url :thumb,  class: "thumbnail image-responsive m-5" %></a>	
-					<% end %>	
-				</div>
-			<% end %>	
-		</div>	 	 
-	</div>	
-</div>
-	 
+	   	   <div class="row"> 
+    
+		<% if @photos.blank? %>
+		  <h4>There are no p containing the term <%= params[:search] %>.</h4>
+		<% else %>
+				<% @photos.each do |photo| %>
+					<div class="card-deck text-center">
+						<div class="card bg-dark text-white" >
+							<%= link_to photo do%>
+								<%= image_tag photo.image.url :thumb,  class: "img-fluid" %></a>	
+							<% end %>	
+							 <div class="card-body p-0">
+								<h6 class="card-title pt-2 align-middle"><%= photo.name %></h6>
+							 </div>
+						</div>
+				<% end %>
+		<% end %>
+		</div>
+		</div>
+ </div>

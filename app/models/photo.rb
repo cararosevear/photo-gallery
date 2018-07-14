@@ -6,15 +6,11 @@ serialize :images, JSON # If you use SQLite, add this line.
 validates_processing_of :image
 validate :image_size_validation
  
-validates :name, length: {minimum: 5, maximum: 50}, allow_blank: false
-validates :description,  length: {minimum: 10, maximum: 200}, allow_blank: false
+validates :name, length: {minimum: 3, maximum: 50}, allow_blank: false
+validates :description,  length: {minimum: 5, maximum: 200}, allow_blank: false
 
 def self.search(search)
-  if search
-    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-  else
-    find(:all)
-  end
+  where("name LIKE ?", "%#{search}%") 
 end
 
 private

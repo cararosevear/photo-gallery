@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  require 'aws-sdk-s3'  # v3: require 'aws-sdk'
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   
   require 'exifr'
@@ -8,9 +9,15 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
  def index
-		@photos = Photo.all
+	@photos = Photo.all
+	if params[:search]
+		@photos = Photo.search(params[:search]).order("created_at DESC")
+	else
+		@photos = Photo.all.order("created_at DESC")
+	end
   end
-
+ 
+  
   # GET /photos/1
   # GET /photos/1.json
   def show
@@ -66,6 +73,7 @@ class PhotosController < ApplicationController
     end
   end
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo

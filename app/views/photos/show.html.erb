@@ -1,26 +1,19 @@
-<h2 class="m-5 pt-5">Add New Photo</h2>
- <div id="container" class="container m-5 form">
-	<h2>Name:   <%= @photo.name %> </h2>
-	<p id="notice"><%= notice %></p>
-     <h3 class="mb-0">Description:</strong>
-	  <%= @photo.description %>
-	</p>
-	
-	<p>
-	  <strong>Location:</strong>
-	  <%= @photo.image.url %>
-	</p>
-	<p>
-	  <strong>Created by:</strong>
-	  <%= @photo.user_id %>
-	</p>
-    <p>
-	 <%= image_tag @photo.image.url, class:"col-sm-12 col-md-6 offset-md-2" %>
-	</p>
-	
+<div class="container-fluid  pt-5 mb-5">
+ 
+	<%= link_to ' < Back', photos_path, class: 'btn btn-outline-dark m-5' %>  
+ 
+  <div class="card text-info bg-light col-sm-12 col-md-8 offset-md-1" >
+	<div class="card-body ">
+		<p id="notice"><%= notice %></p>
+		<%= link_to 'Edit', edit_photo_path(@photo), class: 'card-link btn btn-outline-dark  float-md-right' %>
+		<h5 class="card-title"><%= @photo.name %></h5>
+		<p class="card-text"><strong class="mr-2">Description: </strong> <%= @photo.description %></p>
+		<p class="card-text"><strong class="mr-2">Location:</strong><%= @photo.image.url %></p>
+		<%= image_tag @photo.image.url, class:"card-img" %> 
+	</div> 
+	<div class="card-footer">Created by: <%= @photo.user_id %></small>
+    </div>
+  </div>
+</div>
 
-	
-	<h5><%= link_to 'Edit', edit_photo_path(@photo) %> |
-	<%= link_to 'Back', photos_path %></h5>
- </div>
- </div>
+ 

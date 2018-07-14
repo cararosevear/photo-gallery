@@ -1,6 +1,6 @@
  
  <h2 class="m-5">Add New Photo</h2>
- <div id="container" class="container m-5 form">
+ <div id="container" class="container m-5 form border border-info">
 	<div class="row">
 		<div class="col-sm-12 offset-md-2 col-md-8">
 		  <%= form_for @photo, html: { multipart: true }  do |f| %>
@@ -15,31 +15,33 @@
 				  </ul>
 				</div>
 			  <% end %>
+
 			   <div class="form-group">
-					<%= label_tag :name, 'Title' %>
-					<%= text_field_tag :name, nil, class: 'form-control', id: 'name', placeholder: 'please enter a Title' %>
+					<%= f.label :name, 'Title' %>   
+					<%= f.text_field :name, class: 'form-control', id: 'name', placeholder: 'please enter a Title' %>
 					<small id="titleHelp" class="form-text text-muted">Title of Photo to upload.</small>
 				</div>
 		 
-				<div class="form-group">
-					<%= label_tag :description, 'Decscription' %>
-					<%=  text_area :description, nil, class: 'form-control', id: 'description', placeholder: 'please enter a Description' %>
+				<div class="form-group mt-3">
+					<%= f.label :description, 'Decscription' %>
+					<%=  f.text_area :description,  class: 'form-control', id: 'description', placeholder: 'please enter a Description' %>
 					<small id="titleHelp" class="form-text text-muted">Enter a description of your photo.</small>
 			  </div>
 			  
-			 <div class="form-group">
-				<%= label_tag :image, 'Image' %>
-				<%= image_tag(@photo.image_url, class: 'img-fluid') if @photo.image? %>
-				<span class="fileinput-button"> <%=  f.file_field :image %> </span>
-			 
-			 
-			  <% if f.object.image? %>
-				  <%= f.label :remove_image %>
-				  <%= link_to 'Destroy', photo, method: :delete, class:"btn", data: { confirm: 'Are you sure?' } %>
-				<% end %>
-			  </div>
+ 
+			  <div class="form-group bg-light p-1 text-center mt-3">
+				<h3><%= f.label :image %> 
+					<% if f.object.image? %>
+						<small><%= link_to '<i class="far fa-trash-alt"></i> '.html_safe, photo, method: :delete, class:"btn btn-danger float-right", data: { confirm: 'Are you sure?' } %>
+						</small>
+					<% end %>
+				</h3>
+				<%= image_tag(@photo.image_url , class:'image-fluid col-sm-12 col-md-8')  if @photo.image? %>
+				<span class="fileinput-button "> <%=  f.file_field :image %> </span>
+	   
+	         </div>
 			  
-			  <div class="form-group">
+			  <div class="form-group mt-3">
 				  <div class="field">
 					<%= f.label :user_id %>
 					<%= f.number_field :user_id %>

@@ -75,3 +75,6 @@ gem 'exifr', '~> 1.3', '>= 1.3.4'
  # Bootstrap 4
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+
+#FontAwesome styles
+gem 'font-awesome-sass', '~> 5.0.13'
