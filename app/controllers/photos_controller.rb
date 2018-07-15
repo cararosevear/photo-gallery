@@ -9,12 +9,19 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
  def index
-	@photos = Photo.all
-	if params[:search]
-		@photos = Photo.search(params[:search]).order("created_at DESC")
-	else
-		@photos = Photo.all.order("created_at DESC")
-	end
+      Aws.use_bundled_cert!
+	   s3 = Aws::S3::Client.new
+	   # yields one response object per API call made, this will enumerate
+	   # EVERY object in the named bucket
+	   @photos= s3.list_objects(bucket: 'project-cararosevear' )
+ 
+ 
+	#@photos = Photo.all
+	 if params[:search]
+	 	@photos = Photo.search(params[:search]).order("created_at DESC")
+	 else
+	 	@photos = Photo.all.order("created_at DESC")
+	 end
   end
  
   
@@ -82,8 +89,8 @@ class PhotosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photo_params
-      params.require(:photo).permit(:name, :description, :image, :user_id)
-    end
+      params.require(:photo).permit(:name, :description, :image, :user_id, :remove_image)
+    end  
 	
 	 # Get the image metadat before posting in show.
 	def get_exifr
