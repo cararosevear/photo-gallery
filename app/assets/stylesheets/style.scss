@@ -1,0 +1,73 @@
+ html,
+body {
+  height: 100%;
+  margin:0 auto;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 4em;
+  /* must be same height as the footer */
+}
+
+
+header, section {
+    display: block;
+}
+
+header {
+	z-index: 32;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: rgba(255,255,255,0.75);
+    background-color: #24292e;
+}
+
+header .search{
+	color:#fff;
+}
+ 
+header .header-search-input {
+    min-height: 30px;
+    font-size: 16px;
+    color: #fffff;
+}
+
+ h1, h2, h3, h4, h5, h6, a.btn  {
+  color:#24292e;
+}
+ 
+
+// Minimal reset
+a img {
+	border: none;
+}
+ 
+pre {
+	color: #DFDFDF;
+	display: none;
+	font-size: 2em;
+	margin: 2em 0;
+	padding: 0;
+	text-align: center;
+	text-shadow: 0 1px 2px #333;
+}
+
+
+a.footer{
+   color: rgba(255,255,255,0.75); 
+}
+.footer {
+	color: rgba(255,255,255,0.75);
+	background-color: #24292e;
+	height: 2em;
+	left: 0;
+	position: static;/* Updated Property */
+	font-size: small;
+	bottom: 0;
+}
+ 

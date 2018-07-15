@@ -12,6 +12,6 @@ require 'fog/aws'
 		  aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'], #set AWS_SECRET_ACCESS_KEY=aws_secret_access_key
 		  region:                ENV['AWS_REGION'], #set AWS_REGION=aws_region
 	  }
-	  config.fog_directory  = ENV['AWS_BUCKET']' #set AWS_BUCKET=main bucket to access
+	  config.fog_directory  = ENV['AWS_BUCKET'] #set AWS_BUCKET=main bucket to access
 end
  
