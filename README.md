@@ -3,12 +3,12 @@
  Photo gallery using Ruby for Rails.  Functionality includes: Create, List, Edit, Delete and Search.  The front end is styled using Bootstrap 4 and FontAwesome.  The image files are stored on Amazon S3.
  ______________________________________________________________________________________________________________________
  
- REQUIRED: AWS Account with a S3 bucket and Security Credentials.
+ REQUIRED: AWS Account with an S3 bucket and Security Credentials.
     
 		    AWS_ACCESS_KEY_ID=your_aws_access_key_id   
 		    AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
 		    AWS_REGION=your_aws_region
-      AWS_BUCKET=your_bucket_name
+                    AWS_BUCKET=your_bucket_name
       
  ______________________________________________________________________________________________________________________
  
