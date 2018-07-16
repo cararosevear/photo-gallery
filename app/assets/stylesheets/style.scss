@@ -47,18 +47,8 @@ a img {
 	border: none;
 }
  
-pre {
-	color: #DFDFDF;
-	display: none;
-	font-size: 2em;
-	margin: 2em 0;
-	padding: 0;
-	text-align: center;
-	text-shadow: 0 1px 2px #333;
-}
-
-
-a.footer{
+ 
+.footer > a:link{
    color: rgba(255,255,255,0.75); 
 }
 .footer {
@@ -66,8 +56,9 @@ a.footer{
 	background-color: #24292e;
 	height: 2em;
 	left: 0;
-	position: static;/* Updated Property */
+	position: absolute;/* Updated Property */
 	font-size: small;
 	bottom: 0;
+	width:100%;
 }
  

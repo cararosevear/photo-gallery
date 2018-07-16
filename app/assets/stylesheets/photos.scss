@@ -1,62 +1,52 @@
 // Place all the styles related to the Photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- 
 
-.preview{
-	width:100%;
-	max-width:500px; 
-	height:auto; 
+ form {
+	width:100%; 
+	max-width:400px;
+ }
+ 
+ 
+#img_preview_container{
+  width: 400px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ccc;
+  color: #ecf0f1;
+    border-radius: 0.25rem;
+    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+	}
+	
+#img_preview_container input {
+  line-height: 200px;
+  font-size: 200px;
+  position: absolute;
+  opacity: 0;
+  z-index: 10;
+}
+.img_prev{
+   display:none; 
+   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	}
  
-
 
 #desktop {
 	display: block;
 }
 
  
- form {width:100%; max-width:400px;}
- .fileinput-button, .btn {
-    display: inline-block;
-    font-weight: normal;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.25;
-    border-radius: 0.25rem;
-    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-    color: #fff;
-    background-color: #7952B3;
-    border-color: #7952B3;
-    border-radius: 0px;
-  }
- 
 input , textarea,  checkbox {
     display: block;
- 
     padding: .3rem .75rem;
     font-size: 1rem;
     line-height: 1;
     color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
- textarea {
-    width: 100%;    
-}
+ 
   

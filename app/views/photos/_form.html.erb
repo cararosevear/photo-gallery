@@ -36,12 +36,19 @@
 						</small>
 					<% end %>
 				</h3>
-				<%= image_tag(@photo.image_url , class:'image-fluid col-sm-12 col-md-8')  if @photo.image? %>
-				<span class="fileinput-button "> <%=  f.file_field :image %> </span>
-	   
+				
+			   <div id="img_preview_container">
+					<img id="img_prev" src="#" alt="your image" class="img-thumbnail hidden"/>No Image
+					</div><br/>
+				<span class="btn btn-default btn-file">
+						<%= f.file_field :image, id: "image-upload" %>
+						 <i class="spinner"></i>
+				</span>
+				<%= f.hidden_field :image_cache %>
+				 <%= image_tag(@photo.image_url , class:'image-fluid col-sm-12 col-md-8')  if @photo.image? %>
 	         </div>
 			  
-			  <div class="form-group mt-3">
+			 <div class="form-group mt-3">
 				  <div class="field">
 					<%= f.label :user_id %>
 					<%= f.number_field :user_id %>

@@ -1,21 +1,22 @@
-<div class="container-fluid m-5">
+<div class="container-fluid">
 
 	<p id="notice"><%= notice %></p>
    
 	<h1 class="mt-5 pt-4 ">Photo Gallery </h1>
-	   	   <div class="row"> 
+	   	   <div class="row m-0"> 
     
 		<% if @photos.blank? %>
 		  <h4>There are no images containing the term <%= params[:search] %>.</h4>
 		<% else %>
 				<% @photos.each do |photo| %>
 					<div class="card-deck text-center">
-						<div class="card bg-dark text-white" >
-							<%= link_to photo do%>
-								<%= image_tag photo.image.url :thumb,  class: "img-fluid" %></a>	
+						<div class="card bg-dark" >
+ 
+							<%= link_to  photo  do %>
+								<%= image_tag photo.image.url :thumb,  class: "img-fluid " %></a>	
 							<% end %>	
-							 <div class="card-body p-0">
-								<h6 class="card-title pt-2 align-middle"><%= photo.name %></h6>
+							 <div class="card-body  ">
+								<h6 class="card-title pt-2 align-middle text-white"><%= photo.name %></h6>
 							 </div>
 						</div>
 				<% end %>
@@ -23,3 +24,4 @@
 		</div>
 		</div>
  </div>
+ 	

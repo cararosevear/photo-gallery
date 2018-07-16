@@ -9,8 +9,13 @@ validate :image_size_validation
 validates :name, length: {minimum: 3, maximum: 50}, allow_blank: false
 validates :description,  length: {minimum: 5, maximum: 200}, allow_blank: false
 
+ 
 def self.search(search)
-  where("name LIKE ?", "%#{search}%") 
+  if search
+    where('name LIKE ?', "%#{search}%")
+  else
+    scoped
+  end
 end
 
 private
