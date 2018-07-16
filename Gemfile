@@ -79,3 +79,4 @@ gem 'jquery-rails'
 
 #FontAwesome styles
 gem 'font-awesome-sass', '~> 5.0.13'
+ 
